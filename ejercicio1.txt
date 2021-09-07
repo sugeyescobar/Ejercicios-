@@ -1,0 +1,48 @@
+package ejercicio1;
+
+import java.util.Scanner;
+import java.net.Socket;
+/**
+ *
+ * @author ESCOBAR
+ */
+public class Ejercicio1 {
+    public static void main(String[] args) {
+      int col, fil,n=1,num=1;
+        Scanner entrada = new Scanner(System.in);//genera objeto
+        System.out.println("Ingresa el numero de columnas ");//pidedatos para el arreglo
+        col=entrada.nextInt();//variable designada para el arreglo
+        System.out.println("Ingresa el numero de filas ");//pidedatos para el arreglo
+        fil=entrada.nextInt();//variable designada para el arreglo
+        int matriz[][] = new int[col][fil];
+        for(int i=0;i<col;i++){
+            for(int j=0;j<fil;j++){
+                n++;
+                num=n*3*j+1*i;
+                if(num<=100){
+                    matriz[i][j] = num;
+                }
+                else{
+                    int num2;
+                    num2=(num/9)*2;
+                    if(num2<=100){
+                        matriz[i][j] = num2;
+                    }
+                    else{
+                        matriz[i][j] = 0;
+                    }
+                }
+            }
+        }
+        System.out.println("Los valores son:");
+        for (int[] matriz1 : matriz) {
+            System.out.println();
+            for (int j = 0; j < matriz1.length; j++) {
+                System.out.print(matriz1[j] + " ");
+            }
+        }
+    }
+}
+
+    
+  
